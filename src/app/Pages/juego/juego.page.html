@@ -1,0 +1,75 @@
+<ion-content color="dark">
+
+    <ion-grid *ngIf="!cargando">
+        <ion-row>
+            <ion-col size="2">
+            </ion-col>
+            <ion-col size="8">
+                <div class="divTurno">
+                    <ion-label>
+                        <p>{{partida.turno}}</p>
+                    </ion-label>
+                </div>
+            </ion-col>
+            <ion-col size="2">
+                <ion-button fill="clear" class="btnPuntos" (click)="menu($event)">
+                    <ion-icon name="ellipsis-horizontal" slot="icon-only"></ion-icon>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="rowJugadores">
+            <ion-col *ngFor="let player of jugadores()">
+                <div class="divJugador">
+                    <div class="headerJugador">
+                        <ion-label>
+                            <p>{{player.nickname}}</p>
+                        </ion-label>
+                    </div>
+                    <div class="bodyJugador">
+                        <ion-label>
+                            <p>{{player.kilometros}} KM</p>
+                        </ion-label>
+                    </div>
+                    <div class="footerJugador">
+                        <ion-icon name="timer" [ngClass]="{
+                            'libre': player.estados.libre && !player.estados.prioritario,
+                            'bloqueado': !player.estados.libre,
+                            'blindado': player.estados.prioritario
+                        }"></ion-icon>
+                        <ion-icon name="water" [ngClass]="{
+                            'libre': player.estados.gasolina && !player.estados.gasolinaInfinita,
+                            'bloqueado': !player.estados.gasolina,
+                            'blindado': player.estados.gasolinaInfinita
+                        }"></ion-icon>
+                        <ion-icon name="ellipse" [ngClass]="{
+                            'libre': player.estados.luz && !player.estados.prioritario,
+                            'bloqueado': !player.estados.luz,
+                            'blindado': player.estados.prioritario
+                        }"></ion-icon>
+                        <ion-icon name="aperture" [ngClass]="{
+                            'libre': player.estados.ruedas && !player.estados.impinchable,
+                            'bloqueado': !player.estados.ruedas,
+                            'blindado': player.estados.impinchable
+                        }"></ion-icon>
+                        <ion-icon name="build" [ngClass]="{
+                            'libre': player.estados.coche && !player.estados.asVolante,
+                            'bloqueado': !player.estados.coche,
+                            'blindado': player.estados.asVolante
+                        }"></ion-icon>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="rowMensaje">
+            <ion-col>
+                <ion-label>
+                    <p>
+                        {{partida.mensaje}}
+                    </p>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <app-mano *ngIf="partida.iniciada" [partida]="partida" [jugador]="partida.jugador"></app-mano>
+    </ion-grid>
+
+</ion-content>

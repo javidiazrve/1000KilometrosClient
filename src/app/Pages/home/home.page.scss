@@ -1,0 +1,124 @@
+.colLogo {
+    border: 5px orangered solid;
+    border-radius: 10px;
+    .divLogo {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-label {
+            text-align: center;
+            width: 100%;
+            font-size: 60px;
+            font-weight: 900;
+            color: orangered;
+        }
+    }
+}
+
+ion-grid {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.slideCrear {
+    .btnBack {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        color: orangered;
+        --padding-start: 0;
+        --padding-end: 0;
+    }
+    .formCrear {
+        ion-label {
+            color: white;
+            font-weight: 700;
+        }
+        ion-button {
+            font-weight: 700;
+            --background: orangered;
+        }
+    }
+}
+
+.slideUnirse {
+    .btnBack {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        color: orangered;
+        --padding-start: 0;
+        --padding-end: 0;
+    }
+    .formUnirse {
+        ion-label {
+            color: white;
+            font-weight: 700;
+        }
+        ion-button {
+            font-weight: 700;
+            --background: orangered;
+        }
+    }
+}
+
+.rowBotones {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-slides,
+    ion-col {
+        height: 100%;
+        width: 100%;
+    }
+    .divBotones {
+        width: 100%;
+        ion-button {
+            --background: orangered;
+            font-weight: 700;
+        }
+    }
+}
+
+.centrado {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.division {
+    width: 100%;
+    position: relative;
+    hr {
+        height: 5px;
+        color: white;
+        width: 90%;
+        background-color: white;
+    }
+    ion-badge {
+        z-index: 10;
+        font-size: 20px;
+        color: white;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-label {
+        text-align: center;
+        p {
+            font-size: 15px;
+            color: white;
+        }
+    }
+}

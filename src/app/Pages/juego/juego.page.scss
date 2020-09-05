@@ -1,0 +1,212 @@
+ion-grid {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    ion-col {
+        padding: 0;
+    }
+    display: flex;
+    flex-flow: column;
+}
+
+.divTurno {
+    height: 35px;
+    width: 100%;
+    background-color: orangered;
+    border-radius: 0px 0px 10px 10px;
+    ion-label {
+        text-align: center;
+        p {
+            padding-top: 6px;
+            font-size: 15px;
+            font-family: fantasy;
+        }
+    }
+}
+
+.btnPuntos {
+    width: 100%;
+    height: 100%;
+    --padding-start: 0;
+    --padding-end: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.rowJugadores {
+    margin-top: 5px;
+    flex-grow: 1;
+    ion-col {
+        min-width: 140px;
+        margin: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .divJugador {
+            position: relative;
+            height: 100%;
+            min-height: 100px;
+            max-height: 150px;
+            padding: 5px;
+            .headerJugador {
+                height: 20%;
+                ion-label {
+                    text-align: center;
+                    p {
+                        font-size: 15px;
+                        margin: 0;
+                    }
+                }
+            }
+            .bodyJugador {
+                height: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ion-label {
+                    text-align: center;
+                    p {
+                        width: 100%;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .footerJugador {
+                height: 20%;
+                font-size: 15px;
+                text-align: center;
+                ion-icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.libre {
+    color: green;
+}
+
+.bloqueado {
+    color: red;
+}
+
+.blindado {
+    color: rgb(209, 209, 2) !important;
+}
+
+.centrado {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rowMensaje {
+    ion-label {
+        p {
+            text-align: center;
+            padding: 10px;
+            background: orangered;
+        }
+    }
+}
+
+.carta {
+    margin: 5px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    ion-card-content {
+        padding: 0;
+    }
+}
+
+@media (min-height: 640px) {
+    .divTurno {
+        height: 40px;
+        ion-label {
+            p {
+                padding-top: 10px;
+                font-size: 20px;
+            }
+        }
+    }
+    .rowJugadores {
+        ion-col {
+            .divJugador {
+                .headerJugador,
+                .bodyJugador {
+                    ion-label {
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .footerJugador {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .rowMensaje {
+        ion-label {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media (min-height: 790px) {
+    .divTurno {
+        height: 40px;
+        ion-label {
+            p {
+                font-size: 20px;
+                padding-top: 10px;
+            }
+        }
+    }
+    .rowJugadores {
+        ion-col {
+            .divJugador {
+                .headerJugador,
+                .bodyJugador {
+                    ion-label {
+                        p {
+                            font-size: 25px;
+                        }
+                    }
+                }
+                .footerJugador {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+    .rowMensaje {
+        ion-label {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .rowJugadores {
+        ion-col {
+            .divJugador {
+                .footerJugador {
+                    ion-icon {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

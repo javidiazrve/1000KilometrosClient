@@ -1,0 +1,47 @@
+.divJugadores {
+    width: 90%;
+    max-width: 500px;
+}
+
+ion-list {
+    background: transparent;
+}
+
+.labelSala {
+    text-align: center;
+    h1 {
+        color: rgb(172, 0, 0);
+        margin-bottom: 50px;
+        font-size: 30px;
+        font-weight: 800;
+    }
+}
+
+.btnSalir {
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    color: rgb(172, 0, 0);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+}
+
+.btnListo {
+    width: 50px;
+    height: 50px;
+    color: rgb(0, 174, 0);
+    font-size: 20px;
+}
+
+.btnEmpezar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 200px;
+    --background: rgb(172, 0, 0);
+    --background-activated: rgb(111, 0, 0);
+}

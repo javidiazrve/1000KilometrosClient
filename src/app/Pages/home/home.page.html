@@ -1,0 +1,80 @@
+<ion-content color="dark">
+
+    <ion-grid>
+        <ion-row>
+            <ion-col class="colLogo">
+                <div class="divLogo">
+                    <ion-label>
+                        1000 KM
+                    </ion-label>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="rowBotones">
+            <ion-col>
+                <ion-slides #Slider pager="false" [options]="slideOpts">
+                    <ion-slide class="slideCrear" color="dark">
+                        <ion-button fill="clear" class="btnBack" (click)="irBotones()">
+                            <ion-icon name="arrow-redo" slot="icon-only"></ion-icon>
+                        </ion-button>
+                        <div class="formCrear">
+                            <ion-label>Crear Sala</ion-label>
+                            <ion-item color="dark">
+                                <ion-label position="floating">Nombre</ion-label>
+                                <ion-input type="text" maxlength="13" [(ngModel)]="nickname"></ion-input>
+                            </ion-item>
+                            <br>
+                            <ion-button expand="full" (click)="crearSala()">Crear</ion-button>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="divBotones">
+
+                            <ion-button expand="full" (click)="irCrear()">Crear Sala</ion-button>
+                            <br>
+                            <div class="division">
+                                <hr/>
+                                <ion-badge color="dark" class="centrado">O</ion-badge>
+                            </div>
+                            <br>
+                            <ion-button expand="full" (click)="irUnirse()">Unirse a Sala</ion-button>
+                        </div>
+                    </ion-slide>
+                    <ion-slide class="slideUnirse">
+                        <ion-button fill="clear" class="btnBack" (click)="irBotones()">
+                            <ion-icon name="arrow-undo" slot="icon-only"></ion-icon>
+                        </ion-button>
+                        <div class="formUnirse">
+                            <ion-label>Unirse a Sala</ion-label>
+                            <ion-item color="dark">
+                                <ion-label position="floating">Nombre</ion-label>
+                                <ion-input type="text" maxlength="13" [(ngModel)]="nickname"></ion-input>
+                            </ion-item>
+                            <ion-item color="dark">
+                                <ion-label position="floating">ID Sala</ion-label>
+                                <ion-input type="number" [(ngModel)]="id"></ion-input>
+                            </ion-item>
+                            <br>
+                            <ion-button expand="full" (click)="joinSala()">Unirse</ion-button>
+                        </div>
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="footer">
+                    <ion-label>
+                        <p>
+                            1000KM
+                        </p>
+                        <p>
+                            Javier Diaz 2020
+                        </p>
+                    </ion-label>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

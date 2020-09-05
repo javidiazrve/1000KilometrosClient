@@ -1,0 +1,27 @@
+ion-content {
+    height: 100%;
+    max-width: 250px;
+    background: #222428;
+}
+
+ion-list-header {
+    ion-label {
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    --background: orangered;
+    color: white;
+}
+
+ion-item {
+    color: white;
+    ion-icon {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    ion-label {
+        font-size: 15px;
+        font-weight: 700;
+    }
+}

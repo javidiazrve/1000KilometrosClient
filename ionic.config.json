@@ -1,0 +1,7 @@
+{
+  "name": "juegoVistaPrueba",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

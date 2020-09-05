@@ -1,0 +1,113 @@
+<ion-row class="rowMazos">
+    <ion-col>
+        <div [ngClass]="{'divMazo centrado': true, 'parpadea': parpadea(0)}" (click)="tomarCarta('mazo')">
+            <div>
+                <ion-label>
+                    <p>1K</p>
+                </ion-label>
+            </div>
+        </div>
+    </ion-col>
+    <ion-col>
+        <div class="divKilometraje">
+            <div class="semiCirculo">
+                <div class="divSemaforo">
+                    <p class="semaforo">
+                        <ion-icon name="ellipse" [ngClass]="{
+                                'libre': jugador.estados.luz,
+                                'bloqueado': !jugador.estados.luz,
+                                'blindado': jugador.estados.prioritario
+                            }"></ion-icon>
+                    </p>
+                </div>
+                <ion-label>
+                    <p class="kilometraje">{{jugador.kilometros}}KM</p>
+                </ion-label>
+            </div>
+        </div>
+    </ion-col>
+    <ion-col>
+        <div [ngClass]="{'divDesechadas centrado': true, 'parpadea': parpadea(1)}" (click)="tomarCarta('pozo')">
+            <ion-card *ngIf="partida.mazoPozo.length === 0" class="carta cartaVacia">
+                <ion-card-content>
+                    <ion-label class="labelVacio">1000KM</ion-label>
+                </ion-card-content>
+            </ion-card>
+            <ion-card *ngIf="partida.mazoPozo.length !== 0" [ngClass]="['carta', cartaPozo().clase]">
+                <ion-card-content>
+                    <ion-label *ngIf="cartaPozo().valor !== 0">
+                        {{cartaPozo().valor}}
+                    </ion-label>
+                    <ion-icon *ngIf="cartaPozo().valor === 0" slot="icon-only" [name]="cartaPozo().icon"></ion-icon>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-col>
+</ion-row>
+<ion-row class="rowTablero">
+    <ion-col>
+        <ion-icon name="timer" [ngClass]="{
+            'libre': jugador.estados.libre,
+            'bloqueado': !jugador.estados.libre,
+            'blindado': jugador.estados.prioritario
+        }"></ion-icon>
+    </ion-col>
+    <ion-col>
+        <ion-icon name="water" [ngClass]="{
+            'libre': jugador.estados.gasolina,
+            'bloqueado': !jugador.estados.gasolina,
+            'blindado': jugador.estados.gasolinaInfinita
+        }"></ion-icon>
+    </ion-col>
+    <ion-col>
+        <ion-icon name="aperture" [ngClass]="{
+            'libre': jugador.estados.ruedas,
+            'bloqueado': !jugador.estados.ruedas,
+            'blindado': jugador.estados.impinchable
+        }"></ion-icon>
+    </ion-col>
+    <ion-col>
+        <ion-icon name="build" [ngClass]="{
+            'libre': jugador.estados.coche,
+            'bloqueado': !jugador.estados.coche,
+            'blindado': jugador.estados.asVolante
+        }"></ion-icon>
+    </ion-col>
+</ion-row>
+<ion-row class="rowCartas">
+
+    <ion-col size="3">
+        <app-carta [carta]="jugador.cartas[0]"></app-carta>
+    </ion-col>
+
+    <ion-col size="3">
+        <app-carta [carta]="jugador.cartas[1]"></app-carta>
+    </ion-col>
+
+    <ion-col size="3">
+        <app-carta [carta]="jugador.cartas[2]"></app-carta>
+    </ion-col>
+
+    <ion-col size="3">
+        <app-carta [carta]="jugador.cartas[3]"></app-carta>
+    </ion-col>
+
+    <ion-col size="4">
+        <app-carta [carta]="jugador.cartas[4]"></app-carta>
+    </ion-col>
+
+    <ion-col size="4">
+        <app-carta [carta]="jugador.cartas[5]"></app-carta>
+    </ion-col>
+
+    <ion-col size="4">
+        <app-carta *ngIf="jugador.cartas[6]" [carta]="jugador.cartas[6]"></app-carta>
+
+        <ion-card class="carta cartaVacia" *ngIf="!jugador.cartas[6]">
+            <ion-card-content>
+                <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+
+</ion-row>

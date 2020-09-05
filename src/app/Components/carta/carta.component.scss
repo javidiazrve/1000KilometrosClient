@@ -1,0 +1,74 @@
+.carta {
+    margin: 5px;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    ion-card-content {
+        padding: 0;
+    }
+}
+
+.cartaKilometraje,
+.cartaAtaque,
+.cartaDefensa,
+.cartaEscudo,
+.cartaVacia,
+.cartaVolteada {
+    background: rgba(0, 0, 0, 0.136);
+    ion-card-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 18px;
+        ion-icon {
+            font-size: 30px;
+        }
+    }
+}
+
+.cartaKilometraje {
+    border: 4px orangered solid;
+    ion-card-content {
+        ion-label {
+            color: white;
+            font-weight: 700;
+        }
+    }
+}
+
+.cartaAtaque {
+    border: 4px red solid;
+    ion-card-content {
+        ion-icon {
+            color: red;
+        }
+    }
+}
+
+.cartaDefensa {
+    border: 4px rgb(0, 187, 0) solid;
+    ion-card-content {
+        ion-icon {
+            color: rgb(0, 187, 0);
+        }
+    }
+}
+
+.cartaEscudo {
+    border: 4px yellow solid;
+    ion-card-content {
+        ion-icon {
+            color: yellow;
+        }
+    }
+}
+
+@media (min-height: 640px) {
+    .carta {
+        margin: 5px;
+        width: 70px;
+        height: 70px;
+    }
+}
