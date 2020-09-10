@@ -13,7 +13,6 @@ import { Jugador } from 'src/clases/jugador';
 export class LobbyPage implements OnInit {
 
   constructor(
-    public PS: PartidaService,
     private platform: Platform,
     private alertController: AlertController,
     private salaService: SalaService

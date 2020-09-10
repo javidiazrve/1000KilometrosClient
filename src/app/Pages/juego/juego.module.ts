@@ -10,11 +10,13 @@ import { JuegoPage } from './juego.page';
 import { CartaComponent } from '../../Components/carta/carta.component';
 import { ManoComponent } from '../../Components/mano/mano.component';
 import { LongPressModule } from 'ionic-long-press';
+import { MenuPopComponent } from '../../Components/menu-pop/menu-pop.component';
 
 @NgModule({
   entryComponents:[
     CartaComponent,
-    ManoComponent
+    ManoComponent,
+    MenuPopComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,6 @@ import { LongPressModule } from 'ionic-long-press';
     JuegoPageRoutingModule,
     LongPressModule
   ],
-  declarations: [JuegoPage, CartaComponent, ManoComponent]
+  declarations: [JuegoPage, CartaComponent, ManoComponent, MenuPopComponent]
 })
 export class JuegoPageModule {}

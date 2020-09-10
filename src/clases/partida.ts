@@ -287,25 +287,29 @@ export class Partida {
   jugarCarta(carta: Carta, para: string) {
 
     this.socket.emit('jugarCarta', carta, para);
-
+    this.tomandoCarta = false;
+    this.jugando = false;
   }
 
   tomarCartaMazo() {
 
     this.socket.emit('tomarCartaMazo');
-
+    this.tomandoCarta = false;
+    this.jugando = true;
+    
   }
 
   tomarCartaPozo() {
-
     this.socket.emit('tomarCartaPozo');
-
+    this.tomandoCarta = false;
+    this.jugando = true;
   }
 
   descartarCarta(carta){
 
     this.socket.emit('descartarCarta', carta)
-
+    this.tomandoCarta = false;
+    this.jugando = false;
   }
 
   abandonarPartida(){

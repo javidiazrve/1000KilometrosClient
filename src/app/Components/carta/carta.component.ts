@@ -17,11 +17,15 @@ export class CartaComponent implements OnInit {
   }
 
   jugarCarta(): void {
-    this.ps.jugarCarta(this.carta);
+    if (this.ps.partida.jugando && !this.ps.partida.tomandoCarta) {
+      this.ps.jugarCarta(this.carta);
+    }
   }
 
   descartarCarta(): void {
-    this.ps.descartarCarta(this.carta);
+    if (this.ps.partida.jugando && !this.ps.partida.tomandoCarta) {
+      this.ps.descartarCarta(this.carta);
+    }
   }
 
 }

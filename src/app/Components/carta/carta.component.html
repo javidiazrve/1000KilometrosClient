@@ -1,4 +1,4 @@
-<ion-card [ngClass]="['carta', carta.clase]" (click)="jugarCarta(carta)" ion-long-press [interval]="1000" (longPressed)="descartarCarta(carta)">
+<ion-card [ngClass]="['carta', carta.clase]" (click)="jugarCarta()" ion-long-press [interval]="1000" (longPressed)="descartarCarta()">
     <ion-card-content>
         <ion-label *ngIf="carta.valor !== 0">
             {{carta.valor}}

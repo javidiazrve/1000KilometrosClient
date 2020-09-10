@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.javierdiazr.KM1000" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyGame</name>
+<widget id="com.javierdiazr.KM1000" version="1.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>1000KM</name>
     <description>Juego de cartas privado.</description>
     <author email="javierzaneti999@gmail.com">Javier Diaz</author>
     <content src="index.html" />

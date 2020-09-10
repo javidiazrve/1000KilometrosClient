@@ -42,6 +42,8 @@ export class PartidaService {
   }
 
   parpadea(mazo: number): Boolean {
+    //mazo === 0 -> mazo de cartas
+    //mazo === 1 -> mazo pozo
 
     if (this.partida.tomandoCarta && this.miTurno()) {
       if (mazo === 1 && this.partida.mazoPozo.length !== 0) return true;
@@ -211,10 +213,10 @@ export class PartidaService {
       } else {
         if (this.posibleJugar(carta) && this.partida.jugando) {
           this.partida.jugarCarta(carta, '');
-          this.partida.jugando = false;
         }
       }
     }
+    
   }
 
 
@@ -229,8 +231,6 @@ export class PartidaService {
         }
       }
 
-      this.partida.tomandoCarta = false;
-      this.partida.jugando = true;
     }
 
   }
